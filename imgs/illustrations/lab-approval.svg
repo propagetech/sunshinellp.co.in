@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Sand testing laboratory and PWD approval">
+  <rect width="480" height="360" fill="#fbf8f0"/>
+  <ellipse cx="240" cy="322" rx="170" ry="18" fill="#eadfc4"/>
+  <!-- workbench -->
+  <rect x="70" y="262" width="340" height="14" rx="6" fill="#1c2b36"/>
+  <!-- large flask with sand sample -->
+  <path d="M210 110h40v40l44 96a14 14 0 0 1-13 20h-102a14 14 0 0 1-13-20l44-96z" fill="#ffffff" stroke="#1c2b36" stroke-width="4"/>
+  <path d="M196 214l24-52v-52h40v52l24 52z" fill="#f0a818" opacity="0.92"/>
+  <ellipse cx="230" cy="214" rx="40" ry="8" fill="#6ba539"/>
+  <rect x="206" y="98" width="48" height="14" rx="6" fill="#1e73be"/>
+  <!-- test tubes -->
+  <g>
+    <rect x="120" y="150" width="22" height="110" rx="11" fill="#ffffff" stroke="#1c2b36" stroke-width="3"/>
+    <rect x="120" y="210" width="22" height="50" rx="0" fill="#6ba539"/>
+    <rect x="338" y="150" width="22" height="110" rx="11" fill="#ffffff" stroke="#1c2b36" stroke-width="3"/>
+    <rect x="338" y="196" width="22" height="64" rx="0" fill="#1e73be"/>
+  </g>
+  <!-- approved badge -->
+  <circle cx="392" cy="120" r="34" fill="#6ba539"/>
+  <path d="M378 120l9 10 18-21" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

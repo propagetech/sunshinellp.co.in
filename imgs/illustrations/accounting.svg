@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Accounting and reporting">
+  <rect width="480" height="360" fill="#fbf8f0"/>
+  <ellipse cx="240" cy="320" rx="160" ry="18" fill="#eadfc4"/>
+  <!-- ledger sheet -->
+  <rect x="120" y="70" width="240" height="200" rx="10" fill="#ffffff" stroke="#d8cba6" stroke-width="2"/>
+  <rect x="120" y="70" width="240" height="40" rx="10" fill="#1c2b36"/>
+  <rect x="120" y="96" width="240" height="14" fill="#1c2b36"/>
+  <circle cx="142" cy="90" r="6" fill="#f0a818"/>
+  <rect x="158" y="84" width="120" height="12" rx="6" fill="#f3bb4d"/>
+  <!-- rows -->
+  <g fill="#e9eef3"><rect x="140" y="128" width="200" height="14" rx="4"/><rect x="140" y="156" width="200" height="14" rx="4"/><rect x="140" y="184" width="200" height="14" rx="4"/><rect x="140" y="212" width="120" height="14" rx="4"/></g>
+  <g fill="#6ba539"><rect x="300" y="128" width="40" height="14" rx="4"/><rect x="300" y="156" width="40" height="14" rx="4"/></g>
+  <g fill="#1e73be"><rect x="300" y="184" width="40" height="14" rx="4"/></g>
+  <!-- bar chart -->
+  <g>
+    <rect x="300" y="226" width="14" height="20" fill="#f0a818"/>
+    <rect x="318" y="216" width="14" height="30" fill="#6ba539"/>
+    <rect x="336" y="206" width="14" height="40" fill="#1e73be"/>
+  </g>
+  <!-- calculator -->
+  <rect x="60" y="190" width="80" height="100" rx="10" fill="#1c2b36"/>
+  <rect x="70" y="200" width="60" height="22" rx="4" fill="#6ba539"/>
+  <g fill="#f3bb4d"><circle cx="80" cy="240" r="6"/><circle cx="100" cy="240" r="6"/><circle cx="120" cy="240" r="6"/><circle cx="80" cy="262" r="6"/><circle cx="100" cy="262" r="6"/><circle cx="120" cy="262" r="6"/></g>
+  <!-- coin -->
+  <circle cx="380" cy="250" r="30" fill="#f0a818" stroke="#b07f0c" stroke-width="3"/>
+  <text x="380" y="262" font-family="Arial" font-size="30" font-weight="bold" fill="#16222b" text-anchor="middle">₹</text>
+</svg>

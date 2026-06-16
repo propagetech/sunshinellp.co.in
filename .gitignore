@@ -1,0 +1,7 @@
+# Dev-only tooling, not deployed
+tools/node_modules/
+drafts/
+
+# OS / editor cruft
+.DS_Store
+*.swp

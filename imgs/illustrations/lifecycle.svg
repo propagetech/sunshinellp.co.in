@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Concept to closure project lifecycle">
+  <rect width="480" height="360" fill="#fbf8f0"/>
+  <ellipse cx="240" cy="322" rx="180" ry="18" fill="#eadfc4"/>
+  <!-- circular flow -->
+  <circle cx="240" cy="178" r="120" fill="none" stroke="#d8cba6" stroke-width="3" stroke-dasharray="6 10"/>
+  <!-- nodes -->
+  <g font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle">
+    <circle cx="240" cy="58" r="34" fill="#f0a818"/><text x="240" y="62" fill="#16222b">Plan</text>
+    <circle cx="360" cy="178" r="34" fill="#6ba539"/><text x="360" y="182" fill="#ffffff">Mine</text>
+    <circle cx="240" cy="298" r="34" fill="#1e73be"/><text x="240" y="302" fill="#ffffff">Crush</text>
+    <circle cx="120" cy="178" r="34" fill="#1c2b36"/><text x="120" y="182" fill="#f3bb4d">Supply</text>
+  </g>
+  <!-- arrows along circle -->
+  <g fill="#9a6a08">
+    <path d="M312 96l14 2-6 13z"/>
+    <path d="M324 256l-2 14-13-7z"/>
+    <path d="M156 256l-13 7-2-14z"/>
+    <path d="M156 100l-6-13 14-2z"/>
+  </g>
+  <!-- center sun -->
+  <g stroke="#f0a818" stroke-width="4" stroke-linecap="round">
+    <line x1="240" y1="150" x2="240" y2="140"/><line x1="258" y1="158" x2="266" y2="150"/><line x1="222" y1="158" x2="214" y2="150"/>
+  </g>
+  <path d="M222 184a18 18 0 0 1 36 0z" fill="#f0a818"/>
+  <path d="M214 192c8-5 18-5 26-5s18 0 26 5v8h-52z" fill="#6ba539"/>
+</svg>
