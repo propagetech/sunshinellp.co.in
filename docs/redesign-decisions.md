@@ -6,6 +6,39 @@ choices and the reasoning behind them so they are not relitigated.
 
 ---
 
+## Public-record facts (29 September 2026)
+
+A third-party research brief (sources: filesure company page for LLPIN AAO-5050, IndiaMART Hosur
+maintenance-contractor listings) gave registry and directory data. What we did with each item:
+
+| Item | Public record | Status on the site |
+| --- | --- | --- |
+| Entity | Limited Liability Partnership, LLPIN AAO-5050 | v2 About panel only, marked "to be confirmed". Not in schema, footer or the live site |
+| Incorporated | 11 March 2019 | Wording on both builds: "Working since 2017, registered as an LLP in 2019". Schema `foundingDate` stays 2017 (the company's own claim) |
+| GSTIN | 33ADWFS8622H1ZJ (check digit valid, state 33 Tamil Nadu, PAN type F firm/LLP) | v2 About panel only, marked "to be confirmed" |
+| Address | 2nd Floor, 86/20, Srinivasa Nilayam, Phase 7, TNHB, Brindavan Nagar, Pappanna Thottam, Hosur, Krishnagiri, Tamil Nadu 635109 | Published on both builds (footer, contact, JSON-LD `streetAddress`). Settles the archive variant noted below |
+| Directory services | Crusher O&M, stone-crusher AMC, cone-crusher / sand-cone maintenance | AMC added to v2 (it is also in the archive). Cone, VSI and HSI maintenance NOT published (marketplace only) |
+
+filesure returned 403 when re-checked, so the LLPIN and the incorporation date were not independently re-verified.
+
+Claims softened on both builds: "one of the prominent providers" became "an established provider"; "delivered
+across India" became "Hosur, Krishnagiri and Bangalore, and wider Tamil Nadu and Karnataka".
+
+Not followed from the brief: a Google Map embed and a web form (house rules: no third-party requests, no
+backend); narrowing the site to O&M only (the eight services come from the company's own site); a projects
+gallery before real photos exist.
+
+### Owner to confirm
+- LLPIN AAO-5050 and GSTIN 33ADWFS8622H1ZJ (then move them into the footer, the About panel on both builds,
+  and JSON-LD `legalName`, `identifier`, `taxID`).
+- Founding: is 2017 the start of trading, with the LLP in 2019? Which year should `foundingDate` carry?
+- The "2nd Floor" address form.
+- The "24x7" delivery service and whether mining and crushing work is offered pan-India.
+- Cone crusher, VSI, HSI and sand-cone maintenance: offered or not.
+- Whether breakdown maintenance belongs in the plant enquiry starter (added in v2 as a work type under O&M).
+
+---
+
 ## v2 alternative (28 September 2026)
 
 A second version lives in `v2/` for the owner to compare with the live site, following the nxtronikx.com
@@ -29,7 +62,7 @@ from now on.
   10 March 2023) give 10 March 2023. v2 says "March 2023". Needs owner input if an exact date is wanted.
 - Address variant: the archive home page reads "86/20, Srinivasa Nilayan, TNHB Phase 7, Brindavan Nagar,
   Pappanna Thottam, Hosur"; the archive contact page reads "86/20, Srinivasa Nilayam, Phase 7, Brindavan Nagar".
-  Both builds publish the contact-page form. Needs owner input on the full postal form.
+  Resolved 29 September 2026: both builds now publish the full registry form (see Public-record facts).
 - Photos: the on-theme photos from the old site read as stock. v2 uses them with descriptive alt text only and
   never labels them as Sunshine plants or projects. `photo-excavator.webp` is 257 by 171 and is not used (too
   small for any slot). Real plant, fleet and team photos are still needs-owner-input.

@@ -475,3 +475,21 @@ strong{font-weight:600;}
   html{scroll-behavior:auto;}
   *,*::before,*::after{transition:none!important;animation:none!important;}
 }
+
+/* ---- Company information (About). Unconfirmed rows use the house "to be confirmed" style. ---- */
+.company-info{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow-1);padding:clamp(24px,3vw,40px);}
+.company-info dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5) var(--s6);margin:0;}
+.company-info dl > div{border-top:2px solid var(--navy);padding-top:var(--s3);}
+.company-info dt{font-family:var(--display);font-weight:600;font-size:.9375rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s1);}
+.company-info dd{margin:0;font-weight:600;color:var(--ink);font-size:1.0625rem;}
+.company-info .tbc{border:2px dashed var(--line-strong);border-radius:var(--r-sm);padding:var(--s3);background:var(--stone);}
+.tbc-tag{display:inline-block;margin-left:var(--s2);font-family:var(--display);font-weight:700;font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-strong);border:1px solid var(--gold-strong);border-radius:var(--r-sm);padding:1px 6px;vertical-align:2px;}
+.tbc-note{margin:var(--s5) 0 0;font-size:var(--fs-sm);color:var(--ink-3);}
+
+/* ---- Auto-hide header: JS adds .is-hidden on scroll down, removes it on scroll up ---- */
+.site-header{transition:transform .25s ease,box-shadow .25s ease;}
+.site-header.is-hidden{transform:translateY(-100%);box-shadow:none;}
+.svc-nav{transition:top .25s ease;}
+.header-hidden .svc-nav{top:24px;}
+@media (max-width:960px){.company-info dl{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:520px){.company-info dl{grid-template-columns:1fr;}}

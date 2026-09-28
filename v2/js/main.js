@@ -1,7 +1,7 @@
 /* Sunshine v2. The site works with JavaScript off: real links, native <details> FAQ,
    mailto enquiry starters, and a no-JS menu that is always open on small screens.
-   This file only (1) opens and closes the mobile menu and (2) marks the service in
-   view in the services index. */
+   This file only (1) opens and closes the mobile menu, (2) auto-hides the header while
+   scrolling down, and (3) marks the service in view in the services index. */
 (function () {
   "use strict";
 
@@ -29,6 +29,37 @@
     var onChange = function () { if (mq.matches) setOpen(false); };
     if (mq.addEventListener) mq.addEventListener("change", onChange);
     else if (mq.addListener) mq.addListener(onChange);
+  }
+
+  // Auto-hide header: slide it away while scrolling down, bring it back on any scroll up.
+  // Never hides near the top, while the mobile menu is open, or while focus is inside it.
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var lastY = window.scrollY, ticking = false;
+    var setHidden = function (hide) {
+      header.classList.toggle("is-hidden", hide);
+      document.documentElement.classList.toggle("header-hidden", hide);
+    };
+    var update = function () {
+      ticking = false;
+      var y = window.scrollY, delta = y - lastY;
+      var menuOpen = toggle && toggle.getAttribute("aria-expanded") === "true";
+      var bar = document.querySelector(".utility");
+      var threshold = (bar ? bar.offsetHeight : 0) + header.offsetHeight + 40;
+      if (menuOpen || header.contains(document.activeElement) || y < threshold) {
+        setHidden(false);
+        lastY = y;
+        return;
+      }
+      if (Math.abs(delta) < 8) return;
+      setHidden(delta > 0);
+      lastY = y;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    header.addEventListener("focusin", function () { setHidden(false); });
+    if (toggle) toggle.addEventListener("click", function () { setHidden(false); });
   }
 
   // Services index: highlight the service currently in view.
