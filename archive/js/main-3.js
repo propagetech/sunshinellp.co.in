@@ -1496,6 +1496,7 @@ var Viamagus_Website_Loader =  {
             newsbar:'',
 			newsbarItems:'',
             init:function(){
+				return; // Archived copy: the old builder's update feed (/REST/...) no longer exists.
 		 		var that =this;
 				 $.ajax({
 						url : '/REST/general/loadWebsiteUpdate/',
