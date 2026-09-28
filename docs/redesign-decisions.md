@@ -6,6 +6,40 @@ choices and the reasoning behind them so they are not relitigated.
 
 ---
 
+## v2 alternative (28 September 2026)
+
+A second version lives in `v2/` for the owner to compare with the live site, following the nxtronikx.com
+approach the client liked. Brief, global and local competitor scans, and art direction:
+`docs/v2-redesign-prompt.md`. Visual system adapted from Vulcan Materials (layout and rhythm only, no brand,
+copy or assets), services index from Heidelberg Materials. Same facts, same five pages, same contact details.
+v2 pages are `noindex, nofollow` and `/v2/` is disallowed in `robots.txt`. v2 is self-contained (its own
+`css/`, `js/`, `fonts/`, `imgs/`). The pages were generated once by `drafts/build-v2.py` (dev only, gitignored)
+so the header and footer are identical and the FAQ schema matches the visible answers; edit the HTML directly
+from now on.
+
+- Header brand: v2 uses `imgs/logo-horizontal.webp`, a horizontal lockup cut from the real logo (sun emblem +
+  real "SunShine" wordmark) with `make-logo-lockup.mjs`, on a light chip. The footer uses the full stacked logo.
+  The live site's header pairs a 44px logo with a CSS text wordmark, which the house rules do not allow; fix it
+  there too if v2 is not chosen.
+- Keywords to pages: Home targets "M.Sand suppliers in Hosur" and crusher O&M; Services targets O&M, raising
+  contractors, crusher erection and statutory permissions; FAQ targets the 2023 M.Sand policy, PWD approval and
+  M.Sand vs P.Sand; Contact targets "M.Sand quote" and delivery to Bangalore.
+- New FAQ entries (M.Sand vs P.Sand, manpower, accounting, statutory permissions) reuse archive wording only.
+- Policy date: the archive says the Tamil Nadu M.Sand policy was released on 09.03.2023; news reports (DT Next,
+  10 March 2023) give 10 March 2023. v2 says "March 2023". Needs owner input if an exact date is wanted.
+- Address variant: the archive home page reads "86/20, Srinivasa Nilayan, TNHB Phase 7, Brindavan Nagar,
+  Pappanna Thottam, Hosur"; the archive contact page reads "86/20, Srinivasa Nilayam, Phase 7, Brindavan Nagar".
+  Both builds publish the contact-page form. Needs owner input on the full postal form.
+- Photos: the on-theme photos from the old site read as stock. v2 uses them with descriptive alt text only and
+  never labels them as Sunshine plants or projects. `photo-excavator.webp` is 257 by 171 and is not used (too
+  small for any slot). Real plant, fleet and team photos are still needs-owner-input.
+- Not published (nothing to verify): BIS, ISO, NABL or PWD approval of Sunshine's own product, capacities,
+  project or client counts. Competitors lead with these; ask the owner which are real.
+- To promote v2: move its files to the root, delete the robots meta on each page, drop `Disallow: /v2/`, and
+  add forwarding pages or a redirect for `/v2/` URLs, as was done for nxtronikx.
+
+---
+
 ## The business
 
 **Sunshine Mining & Crushing Solutions LLP** is a mining, crushing and aggregate

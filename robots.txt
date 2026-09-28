@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /archive/
+Disallow: /v2/
 
 Sitemap: https://www.sunshinellp.co.in/sitemap.xml

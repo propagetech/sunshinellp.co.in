@@ -194,6 +194,11 @@ hr{border:0;border-top:1px solid #e6ddc6;margin:0;}
 .svc-card h3{font-size:1.18rem;margin-bottom:.35rem;}
 .svc-card p{color:var(--ink-2);font-size:1rem;flex:1;}
 .svc-card .btn-text{margin-top:.6rem;}
+.svc-card-dark{background:var(--slate);border-color:var(--slate);justify-content:center;}
+.svc-card-dark .body{color:#fff;justify-content:center;}
+.svc-card-dark h3{color:#fff;}
+.svc-card-dark p{color:var(--cream-muted);}
+.svc-card-dark .btn{margin-top:.6rem;align-self:flex-start;}
 
 /* ---- Split (image + text) ----------------------------------------------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center;}

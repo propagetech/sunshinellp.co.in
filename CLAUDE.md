@@ -247,3 +247,15 @@ Also sanity-check: one `<h1>` per page, every internal link resolves, images hav
 
 The running decisions log lives in **[docs/redesign-decisions.md](docs/redesign-decisions.md)**.
 Add new entries there (newest first) so this file stays focused on the design system.
+
+---
+
+## Design skills (house)
+
+Visual polish follows the **`refactoring-ui`** skill (hierarchy, spacing scale, type scale,
+HSL/OKLCH ramps, depth, imagery, finishing touches). Load it for any CSS/UI pass.
+
+- Skill: `~/.claude/skills/refactoring-ui/` (also `~/.cursor/skills/refactoring-ui/`)
+- Human PDF (do not paste book text here): `/Users/chetan/Downloads/Learning/refactoring-ui_compress 2.pdf`
+- Full rebuilds: `site-rebuild` + `../_rebuild-kit/` — ProPage invariants (WCAG AA, real logo,
+  photos-first, type-by-register, no em/en dashes) override generic taste.
