@@ -6,6 +6,62 @@ choices and the reasoning behind them so they are not relitigated.
 
 ---
 
+## Client chose the classic site (1 October 2026)
+
+Sreenivasulu (9626714999) replied to the preview: keep the OLD website design and layout, not
+either redesign, with these updates. All are applied to the classic site at the root.
+
+| Topic | Client answer | On the site |
+| --- | --- | --- |
+| Version | Keep the old site and its design/layout | Builder site rewritten by hand to ProPage rules, same content and layout |
+| Address | Plot No. 54, HIG II, Brindhavan Nagar, Phase 7 TNHB, Bagalur Road, Hosur, Krishnagiri District 635109 | Contact column, map, JSON-LD |
+| Map | https://maps.app.goo.gl/EZGnrQm15zKDybBs8 (resolves to 12.7452569, 77.8298826) | Google Maps embed in the old 300px map slot, plus a link |
+| Phones | 9626714999, 9398698259 | 6382307976 removed |
+| Emails | svg@sunshinellp.co.in, svgtempl@gmail.com | admin@ and marketing@ removed; the form goes to svg@ with svgtempl@ in cc |
+| Promoters | Two | "4 promoters" became "2 promoters" (home, about, directors) |
+| LLPIN, GSTIN | Correct | Footer line on every page, `identifier` and `taxID` in schema |
+| Start and registration | 2017 start, 2019 LLP: correct | About: "Established in the year 2017 ... and registered as an LLP in 2019" |
+| Delivery | 24/7 | Existing "24x7 services" copy kept |
+| Reach | Work outside Tamil Nadu and Karnataka too | Existing "offered in India" copy kept |
+| Plants | 3-stage and 4-stage: jaw, cone, VSI, hydrocyclones/bucket classifiers; not HSI | One sentence added to Operation And Maintenance Contractors |
+| Approvals, certifications | Do not include | None published. "Approval from PWD" stays as a service |
+| Images | Keep the existing general images | All original images reused; the two banner photos that lived only on the old CDN are now self-hosted (`imgs/banner-about.webp`, `imgs/banner-services.webp`) |
+
+Decisions:
+- The first rebuild moved to `/v1/` (with its own `CLAUDE.md`), v2 stays at `/v2/`, both noindex and
+  disallowed. `archive/` stays untouched as the reference.
+- Rewritten to ProPage rules: semantic HTML, one CSS, one JS, self-hosted fonts, no jQuery, builder
+  scripts, CDN or analytics (the Universal Analytics tag was dead). The form now composes a `mailto:`
+  (the old one posted to a builder endpoint that no longer exists). The map needed a Maps key the
+  site never had, so it is now an embed.
+- Directory URLs (`/about/`, `/services/`, `/contact/`) with forwarding stubs and `_redirects` for the
+  old `.html` URLs. Service anchors are now semantic (`#operation-maintenance` and so on).
+- AA colour: green text and buttons on light surfaces use `#6a8f2e` (large headings) and `#557724`
+  (small text, buttons) instead of `#85ab3f`, which is 2.7:1 on white. The 404 numerals and button
+  were also darkened. Hero overlay 0.42 (was 0.37) for legibility.
+- Accessibility additions with no visual change: one h1 per page (inner banners), visually hidden form
+  labels, descriptive alt text, "Read More" links with hidden context, keyboard-operable dropdown.
+
+Spelling and punctuation fixes (wording kept): "has been emerged" to "has emerged"; missing full stop
+after "power crushing plants"; "delivers" to "deliver"; "service providers" to "service provider";
+"Errection" to "Erection"; "moto" to "motto"; "post-due" to "past-due"; "Puzzulona" to "Puzzolana";
+"expertize" to "has expertise"; "early face" to "early phase"; "geo statistics" to "geostatistics";
+"technology- based" to "technology-based"; "up gradation" to "upgradation"; "equipment's solution" to
+"equipment solution"; "Customers/ dealers" to "customers/dealers"; "Our teams accumulated" to "Our
+team's accumulated"; "Sunshine Mining and crushing solution" to "Sunshine Mining & Crushing
+Solutions"; "Multidisciplinary Engineering And Technical Services Team Offers..." to sentence case;
+"offered in the India" to "offered in India"; the cut-off "regional expertise and cultural" now ends
+"regional expertise."; "We are doing to get the approval" to "We help get the approval"; "setting of
+Laboratory" to "setting up of Laboratory"; the PWD policy sentence split at the date; stray spaces
+in "( P.Sand) ,", "( RP/PL/ML)", "( PWD)", "Macadam(WMM)", "12mm", "We specialize in :", "Our
+Commitment :" and double spaces; en dashes in the values list became colons.
+
+Left as published (flag to the client if wanted): "LA act 1857" (the Land Acquisition Act year),
+the 09.03.2023 policy date, "Sunshine Mining is the number one solutions provider" (Vision), and the
+title-case service names.
+
+---
+
 ## Public-record facts (29 September 2026)
 
 A third-party research brief (sources: filesure company page for LLPIN AAO-5050, IndiaMART Hosur
