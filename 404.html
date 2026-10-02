@@ -64,11 +64,41 @@
     </div>
   </header>
   <main id="main">
-    <div class="errorpage">
-      <h1>404</h1>
-      <p>Page Not Found</p>
-      <a class="btn-error" href="/">Return to homepage</a>
-    </div>
+    <section class="errorpage" aria-labelledby="error-title">
+      <p class="errorpage-code" aria-hidden="true">404</p>
+      <h1 id="error-title">Page not found</h1>
+      <p class="errorpage-lead">That address is not on this site. It may have moved, or the link may be out of date.</p>
+      <p class="errorpage-actions">
+        <a class="btn" href="/">Return to homepage</a>
+      </p>
+      <nav class="errorpage-links" aria-label="Helpful links">
+        <a href="/about/">About Us</a>
+        <a href="/services/">Services</a>
+        <a href="/contact/">Contact Us</a>
+      </nav>
+    </section>
+
+    <section class="mine-snake" id="mine-snake" aria-labelledby="mine-snake-title">
+      <div class="mine-snake-inner">
+        <h2 id="mine-snake-title">Crush a few mines</h2>
+        <p class="mine-snake-lead">A small diversion while you find your way. Steer the crusher, eat the yellow mines, stay clear of the walls and yourself.</p>
+        <div class="mine-snake-hud">
+          <p class="mine-snake-score">Mines crushed: <span id="mine-snake-score">0</span></p>
+          <p class="mine-snake-status" id="mine-snake-status" role="status" aria-live="polite">Press Start to play</p>
+        </div>
+        <canvas id="mine-snake-board" class="mine-snake-board" width="360" height="360" tabindex="0" role="img" aria-label="Mine crushing snake game board. Use arrow keys or the on-screen pad."></canvas>
+        <div class="mine-snake-controls">
+          <button type="button" class="btn mine-snake-start" id="mine-snake-start">Start</button>
+          <div class="mine-snake-pad" aria-label="Direction pad">
+            <button type="button" class="mine-snake-dir" data-dir="up" aria-label="Up">&#9650;</button>
+            <button type="button" class="mine-snake-dir" data-dir="left" aria-label="Left">&#9664;</button>
+            <button type="button" class="mine-snake-dir" data-dir="down" aria-label="Down">&#9660;</button>
+            <button type="button" class="mine-snake-dir" data-dir="right" aria-label="Right">&#9654;</button>
+          </div>
+        </div>
+        <p class="mine-snake-hint">Arrow keys work when the board is focused. On a phone, use the pad.</p>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
@@ -77,6 +107,7 @@
       <p class="credit"><a href="https://propage.in" target="_blank" rel="noopener" title="propage.in">powered by propage.in</a></p>
     </div>
   </footer>
+  <a class="call-fab" href="tel:+919626714999" aria-label="Call Sunshine on +91 96267 14999"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
   <script src="/js/main.js" defer></script>
 </body>
 </html>
