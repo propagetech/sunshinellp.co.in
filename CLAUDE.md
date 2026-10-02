@@ -43,7 +43,7 @@ For a small change, edit the HTML on every page; for a structural change, edit
 | `--yellow` | `#fda81d` | Underline bar, "SUNSHINE" in the hero |
 | `--orange` | `#f1720c` | Services dropdown top border |
 | `--heading` | `#45494d` | Block headings |
-| `--text` | `#626263` | Body text |
+| `--text` | `#505052` | Body text, 17px Quicksand 500 (darkened from the original `#626263` to AAA 8:1 for older readers) |
 | `--band` / `--band-2` | `#f3f3f3` / `#f2f2f4` | Services band, alternate service rows, form fields |
 | `--footer` | `#191919` | Footer, with `#e6e6fa` text and `#0088cc` credit link |
 
@@ -55,6 +55,12 @@ Layout: content area 1366px plus 100px side padding (`--max:1566px`, `--pad-x`),
 and below. Breakpoints 1024 (tiles 2-up), 979 (hamburger, tight padding), 800 (tiles 1-up),
 768 (hero h1 36px), 767 (rows stack), 500 (hero h1 32px, images full width). Header is fixed
 (121px, 103px on mobile) and the home hero sits under it at full viewport height.
+
+## Senior-friendly rules (the founder is over 60)
+
+Keep body text at 17px or more and no text below 14px; keep body grey at AAA contrast; form fields
+keep visible labels above them (not placeholder-only) and errors appear in large red text under the
+field; the phone number stays visible in the header on desktop and as the round call button on phones.
 
 ## Facts (client confirmed, 1 October 2026)
 

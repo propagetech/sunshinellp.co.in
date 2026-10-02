@@ -125,7 +125,31 @@
   }
 
   // ---- Contact form: compose a mailto draft (no backend, nothing stored) -------
+  // Errors are shown in large text under each field (not in small browser pop-ups).
+  var showError = function (field, msg) {
+    var id = field.id + "-err";
+    var p = document.getElementById(id);
+    if (!msg) {
+      if (p) p.remove();
+      field.removeAttribute("aria-invalid");
+      field.removeAttribute("aria-describedby");
+      return;
+    }
+    if (!p) {
+      p = document.createElement("p");
+      p.className = "field-error";
+      p.id = id;
+      field.insertAdjacentElement("afterend", p);
+    }
+    p.textContent = msg;
+    field.setAttribute("aria-invalid", "true");
+    field.setAttribute("aria-describedby", id);
+  };
   document.querySelectorAll("form.contact-form").forEach(function (form) {
+    form.noValidate = true;
+    form.addEventListener("input", function (e) {
+      if (e.target.getAttribute("aria-invalid") === "true") showError(e.target, "");
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var val = function (name) {
@@ -133,10 +157,19 @@
         return el ? String(el.value || "").trim() : "";
       };
       var name = val("name"), email = val("email"), phone = val("phone"), message = val("message");
-      if (!email && !phone) {
-        window.alert("Please enter your email or phone no.");
-        return;
-      }
+      var checks = [
+        ["name", name ? "" : "Please enter your name."],
+        ["email", !email ? "Please enter your email address." : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "" : "Please check the email address, for example name@example.com.")],
+        ["message", message ? "" : "Please type your message."]
+      ];
+      var first = null;
+      checks.forEach(function (c) {
+        var el = form.elements[c[0]];
+        if (!el) return;
+        showError(el, c[1]);
+        if (c[1] && !first) first = el;
+      });
+      if (first) { first.focus(); return; }
       var to = form.getAttribute("data-mailto");
       var cc = form.getAttribute("data-cc");
       var subject = "Website enquiry" + (name ? " from " + name : "");
