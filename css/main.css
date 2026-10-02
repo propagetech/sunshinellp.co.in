@@ -65,7 +65,8 @@ b,strong{font-weight:700;}
 .btn:hover{background:#333;color:#fff;transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.18);}
 
 /* ---- Header -------------------------------------------------------------- */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:1010;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.065);transition:background-color .3s ease,box-shadow .3s ease;}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1010;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.065);transition:background-color .3s ease,box-shadow .3s ease,transform .3s ease;}
+.header-hidden .site-header{transform:translateY(-100%);box-shadow:none;}
 .is-scrolled .site-header{background:rgba(255,255,255,.9);-webkit-backdrop-filter:saturate(180%) blur(12px);backdrop-filter:saturate(180%) blur(12px);box-shadow:0 6px 20px rgba(0,0,0,.08);}
 .header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;height:var(--header-h);padding:5px var(--pad-x);transition:height .3s ease;}
 .is-scrolled .header-inner{height:var(--header-scrolled);}

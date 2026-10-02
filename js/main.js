@@ -2,8 +2,9 @@
    Progressive enhancement only. With JavaScript off the menu is always open on small
    screens, SERVICES is a plain link, and the contact form posts a native mailto draft.
    This file (1) opens and closes the mobile menu and the services submenu,
-   (2) turns the contact form into a tidy, ready-to-send email in the visitor's own app,
-   and (3) mounts the optional 404 "crush a few mines" snake when that markup is present. */
+   (2) compacts the header on scroll and auto-hides it while scrolling down,
+   (3) turns the contact form into a tidy, ready-to-send email in the visitor's own app,
+   and (4) mounts the optional 404 "crush a few mines" snake when that markup is present. */
 (function () {
   "use strict";
 
@@ -66,12 +67,34 @@
   }
 
   // ---- Compact header after scrolling (also reveals the phone call button) ----
+  // Auto-hide: the header slides away while scrolling down and returns on any scroll up.
+  // It never hides near the top, while a menu is open, or while focus is inside it.
   var root = document.documentElement;
+  var header = document.querySelector(".site-header");
   var ticking = false;
+  var lastY = window.scrollY;
+  var setHidden = function (hide) { root.classList.toggle("header-hidden", hide); };
   var onScroll = function () {
     ticking = false;
-    root.classList.toggle("is-scrolled", window.scrollY > 40);
+    var y = window.scrollY;
+    root.classList.toggle("is-scrolled", y > 40);
+    if (!header) return;
+    var menuOpen = (toggle && toggle.getAttribute("aria-expanded") === "true") ||
+      (subToggle && subToggle.getAttribute("aria-expanded") === "true");
+    if (menuOpen || header.contains(document.activeElement) || y < header.offsetHeight + 120) {
+      setHidden(false);
+      lastY = y;
+      return;
+    }
+    var delta = y - lastY;
+    if (Math.abs(delta) < 8) return;
+    setHidden(delta > 0);
+    lastY = y;
   };
+  if (header) {
+    header.addEventListener("focusin", function () { setHidden(false); });
+    if (toggle) toggle.addEventListener("click", function () { setHidden(false); });
+  }
   window.addEventListener("scroll", function () {
     if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
   }, { passive: true });
