@@ -6,6 +6,24 @@ choices and the reasoning behind them so they are not relitigated.
 
 ---
 
+## Analytics: Cloudflare Web Analytics, not Google Analytics (7 October 2026)
+
+The builder site carried a Universal Analytics tag (`UA-113020394-28`, still visible in `archive/`).
+Google stopped processing UA data in 2023, so it had recorded nothing for years; the rewrite dropped it.
+
+Decision: use **Cloudflare Web Analytics** for visitor counts, and Google Search Console for search data.
+
+- Cookieless and does not track individuals, so no consent banner is needed and the site's
+  no-tracking rule holds.
+- No code in the repo. Enable it on the Pages project (`sunshinellp-co-in`, Manage, Web Analytics,
+  Enable Web Analytics); Cloudflare injects the beacon on the next deployment. It cannot be enabled
+  until the Pages project exists, so it is a go-live step.
+- Small, deferred script (a few KB); re-run Lighthouse on Home after go-live to confirm the scores
+  quoted to the client still hold.
+- GA4 was rejected: an extra script and cookies on every page, a consent notice, and more than a
+  four-page site whose goal is phone calls needs.
+
+
 ## Client chose the classic site (1 October 2026)
 
 Sreenivasulu (9626714999) replied to the preview: keep the OLD website design and layout, not

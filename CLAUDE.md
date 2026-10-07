@@ -8,12 +8,17 @@ The client chose it over both redesigns. Do not redesign it; keep changes faithf
   no build step. Works with JS off (menu always open on small screens, SERVICES is a link, the
   contact form posts a native `mailto:`).
 - Self-hosted fonts in `fonts/`: Playfair Display 700 (headings), Quicksand 400/700 (body),
-  Open Sans 700 (header nav only). No Google Fonts, CDN, jQuery or tracking.
+  Open Sans 700 (header nav only). No Google Fonts, CDN, jQuery or tracking
+  (no Google Analytics; visitor counts come from Cloudflare Web Analytics, see below).
 - Directory URLs, path-portable relative links (`../` on inner pages); `404.html` is root-absolute.
   Canonical, OG, sitemap and JSON-LD use `https://www.sunshinellp.co.in/`.
 - Old builder URLs (`about-us.html`, `services.html`, `contact-us.html`, `home.html`) are noindex
   meta-refresh stubs for GitHub Pages and 301s in `_redirects` for Cloudflare Pages.
-- The only third-party request is the Google Maps embed on the home page (client asked for the pin).
+- Third-party requests: the Google Maps embed on the home page (client asked for the pin), and, once
+  live on Cloudflare Pages, the cookieless Cloudflare Web Analytics beacon
+  (`static.cloudflareinsights.com`). The beacon is not in the HTML: Cloudflare injects it at deploy time
+  after Web Analytics is enabled on the Pages project (Manage, Web Analytics). Do not add GA or any
+  other tracker to the pages.
 
 ## Files
 
