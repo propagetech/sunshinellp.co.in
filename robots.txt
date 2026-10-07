@@ -3,5 +3,6 @@ Allow: /
 Disallow: /archive/
 Disallow: /v1/
 Disallow: /v2/
+Disallow: /docs/
 
 Sitemap: https://www.sunshinellp.co.in/sitemap.xml
