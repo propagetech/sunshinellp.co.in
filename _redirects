@@ -3,3 +3,14 @@
 /about-us.html       /about/      301
 /services.html       /services/   301
 /contact-us.html     /contact/    301
+
+# Repo-only files (notes, tooling, old builds): never part of the site
+/.claude/* / 301
+/.github/* / 301
+/.vscode/* / 301
+/archive/* / 301
+/docs/* / 301
+/tools/* / 301
+/.gitignore / 301
+/CLAUDE.md / 301
+/v1/CLAUDE.md / 301
